@@ -1,0 +1,30 @@
+<!--pages/yuyue/yuyue.wxml-->
+<view class='top'>
+  <image src='{{imgurl+imageurl}}' style='width:100%;height:100%;'></image>
+</view>
+<form bindsubmit='tijiao' class='form'>
+
+  <view class='item'>
+    <view style='font-size:26rpx'>姓名</view>
+    <input class='input' name='name' placeholder='请输入姓名' placeholder-style='margin-left:40rpx;font-size:26rpx' value='{{name1}}'>
+    </input>
+  </view>
+  <view class='item'>
+    <view style='font-size:26rpx'>手机</view>
+    <input class='input' name='phone' placeholder='请输入手机号' placeholder-style='margin-left:40rpx;font-size:26rpx' value='{{tel}}'>
+    </input>
+  </view>
+    <view class='item'>
+    <view style='font-size:26rpx'>预约看园时间</view>
+    <picker mode='date' start="2019-01-01" bindchange='binddatechange' name='time'>
+      <input class='input' placeholder='请选择时间' placeholder-style='margin-left:40rpx;font-size:26rpx' disabled='disabled' value='{{val}}'>
+      </input>
+    </picker>
+  </view>
+  <!-- <view class='item'>
+    <view style='font-size:26rpx'>推荐人（推荐人可获取成长豆奖励）</view>
+    <input class='input' name='tjr' placeholder='请输入推荐人姓名，若无则不填' placeholder-style='margin-left:40rpx;font-size:26rpx' value='{{name2}}'>
+    </input>
+  </view> -->
+  <button form-type='submit' class='btn'>预约咨询</button>
+</form>

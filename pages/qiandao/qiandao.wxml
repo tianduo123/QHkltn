@@ -1,0 +1,167 @@
+<!--pages/qiandao/qiandao.wxml-->
+<!-- <view> -->
+
+<image src='../../icon/rule.png' class='rule' bindtap='rule'></image>
+<!-- <image src='../../icon/detail.png' class='rule2' ></image> -->
+<view class='userInfo'>
+  <image src='{{userInfo.avatarUrl}}' class='avatar'>
+  </image>
+  <view style='font-size:28rpx;color:#eeeeee;margin-top:10rpx'>{{userInfo.nickName}}</view>
+  <view style='font-size:30rpx;font-weight:bold;color:#ffffff;margin-top:20rpx;width:100%;text-align:center' bindtap='toScoreDetail'>
+    成长豆：
+    <view style='font-size:32rpx;font-weight:bold;color:#FFFF00;display:inline-block'>{{score}}</view>
+  </view>
+</view>
+<view class='top'>
+  <view class='top-btn'>
+    <view class='btn-l' bindtap='jifen'>
+      <view style='display: flex;align-items: center'>
+        <image src='../../icon/jifen.png' style='width:45rpx;height:45rpx;margin-right:20rpx'></image>
+        <view>积分兑换</view>
+      </view>
+    </view>
+    <view class='btn-r' bindtap='toMore'>
+      <view style='display: flex;align-items: center'>
+        <image src='../../icon/paihang.svg' style='width:45rpx;height:45rpx;margin-right:20rpx'></image>
+        <view>成长豆排行</view>
+      </view>
+    </view>
+  </view>
+  <!-- -->
+  <view class='{{isqiandao?"qiandao2":"qiandao"}}' bindtap='qiandao'>{{isqiandao?"已签到":"点击签到"}}</view>
+  <view style='font-size:26rpx;width:100%;text-align:center'>
+    已连续签到
+    <view style='display:inline-block;color:#ff394c'>{{days}}</view>
+    天
+  </view>
+  <view class='wrap'>
+    <view class='item'>
+      <image src='{{days>=1?"../../icon/isqd.png":"../../icon/qd.png"}}' style='width:68rpx;height:92rpx'></image>
+      <view>第一天</view>
+    </view>
+    <view class='item'>
+      <image src='{{days>=2?"../../icon/isqd.png":"../../icon/qd.png"}}' style='width:68rpx;height:92rpx'></image>
+      <view>第二天</view>
+    </view>
+    <view class='item'>
+      <image src='{{days>=3?"../../icon/isqd.png":"../../icon/qd.png"}}' style='width:68rpx;height:92rpx'></image>
+      <view>第三天</view>
+    </view>
+    <view class='item'>
+      <image src='{{days>=4?"../../icon/isqd.png":"../../icon/qd.png"}}' style='width:68rpx;height:92rpx'></image>
+      <view>第四天</view>
+    </view>
+    <view class='item'>
+      <image src='{{days>=5?"../../icon/isqd.png":"../../icon/qd.png"}}' style='width:68rpx;height:92rpx'></image>
+      <view>第五天</view>
+    </view>
+    <view class='item'>
+      <image src='{{days>=6?"../../icon/isqd.png":"../../icon/qd.png"}}' style='width:68rpx;height:92rpx'></image>
+      <view>第六天</view>
+    </view>
+    <view class='item'>
+      <image src='{{days>=7?"../../icon/isqd.png":"../../icon/qd.png"}}' style='width:68rpx;height:92rpx'></image>
+      <view>第七天</view>
+    </view>
+  </view>
+</view>
+
+<view class='bottom'>
+  <view class='title'>
+    <view style='display:inline-block;margin-left:20rpx'>成长豆任务</view>
+  </view>
+  <!-- 分享任务 -->
+  <view class='work'>
+    <view class='left'>
+      <view>分享小程序</view>
+      <view style='color:#999999'>分享小程序到任意群</view>
+    </view>
+    <view class='right'>
+      <view class='btn' wx:if='{{share.score}}' bindtap='getScore1'>
+        <view style='display:flex;align-items:center;'>
+          <image src='../../icon/score.png' style='width:30rpx;height:30rpx;margin-right:10rpx'></image>
+          <view>领取</view>
+        </view>
+      </view>
+      <button class='btn1' open-type='share' wx:elif='{{!get1}}' bindtap='{{!share?complete1:""}}'>去完成</button>
+      <view class='btn3' wx:else>已完成</view>
+    </view>
+  </view>
+  <!-- 推荐人任务 -->
+  <view class='{{show?"work":"work3"}}' style='display:{{isMake}}'>
+    <view class='work2'>
+      <view class='left'>
+        <view>推荐人</view>
+        <view style='color:#999999'>填写推荐人手机号：500成长豆</view>
+      </view>
+      <view class='right'>
+        <view class='btn' bindtap='complete2'>去完成</view>
+      </view>
+    </view>
+    <view class='tuijianren' style='display:{{show}}'>
+      请输入推荐人手机号：
+      <input bindinput='getPhone'></input>
+      <image src='../../icon/yes.png' style='width:50rpx;height:50rpx;margin-left:30rpx' bindtap='tjphone'></image>
+    </view>
+  </view>
+  <!-- 提建议任务 -->
+  <view class='work'>
+    <view class='left'>
+      <view>提建议</view>
+      <view style='color:#999999'>建议需20字以上，一经采纳获赠200成长豆</view>
+    </view>
+    <view class='right'>
+      <view class='btn' bindtap='getScore3' wx:if='{{comment.score}}'>
+        <view style='display:flex;align-items:center;'>
+          <image src='../../icon/score.png' style='width:30rpx;height:30rpx;margin-right:10rpx'></image>
+          <view>领取</view>
+        </view>
+      </view>
+      <view class='{{get3?"btn3":"btn"}}' bindtap='{{get3?"":"complete3"}}' wx:else>{{get3?"已完成":"去完成"}}</view>
+    </view>
+  </view>
+</view>
+<!-- 精选留言板 -->
+<view class='bottom2'>
+  <view class='title'>
+    <view style='display:inline-block;margin-left:20rpx'>精选留言板</view>
+    <view style='font-size:26rpx' bindtap='toMsg'>我也要留言>></view>
+  </view>
+  <view class='msg_item' wx:for='{{msgList}}' wx:key>
+    <view class='msg_user'>
+      <image src="{{item.headimgurl}}"></image>
+      <view>{{item.nickname}}</view>
+    </view>
+    <view style='display:flex;align-items:center'>
+      <view class='msg_comment'>{{item.content}}</view>
+      <view style='width:20%; display: flex;align-items: center;justify-content: space-around;'>
+        <image src='../../icon/agree.png' class='msg_icon' wx:if='{{item.status==1}}'></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 积分规则 -->
+<view class='rule_wrap' style='width:100%;height:100%;' wx:if='{{isShow}}'>
+  <view style='width:100%;text-align:right;margin-top:150rpx;margin-bottom:30rpx;'>
+    <image src='../../icon/close.svg' style='margin-right:50rpx;width:60rpx;height:60rpx' bindtap='close'></image>
+  </view>
+  <view class='content_wrap'>
+    <view class='content_wrap_top'>
+      <image src='../../icon/rule2.png'></image>
+    </view>
+    <view class='content_wrap_bottom'>
+      <view wx:for='{{ruleList}}' wx:key>{{item}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 新用户送积分弹窗 -->
+<view class='newP' style='height:{{Height*2}}rpx' wx:if='{{isNew}}'>
+
+  <view class='newP_wrap'>
+    <image src='../../icon/new.png' style='width:350rpx;height:350rpx'></image>
+    <view class='newP_btn' bindtap='getNewScore'>立即领取</view>
+  </view>
+
+</view>

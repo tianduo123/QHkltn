@@ -1,0 +1,163 @@
+/* pages/video_detail/video_detail.wxss */
+@import "/wxParse/wxParse.wxss";
+page{
+  box-sizing: border-box;
+  padding-bottom: 120rpx
+}
+.video{
+  width: 100%;
+  height: 420rpx
+}
+.title{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  font-size: 26rpx
+}
+.title2{
+  width: 100%;
+  text-align: right;
+  box-sizing: border-box;
+  padding-right: 30rpx;
+  font-size: 26rpx;
+  color: #666
+}
+.line{
+  width: 100%;
+  height: 20rpx;
+  background: #eeeeee
+}
+/* .share::after{
+  border: none;
+  background: #ffffff;
+  font-size: 24rpx;
+  color: #999999;
+  width: 100%;
+  height: 100%
+} */
+button::after{
+  border: none;
+}
+button{
+  background-color: #fff;
+  border-radius: 0;
+  font-size: 24rpx;
+  color: #999999
+}
+
+.btn{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  border-top: 1rpx solid #eeeeee
+}
+.btn_item{
+  width: 33.33%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 24rpx;
+  color: #999999
+}
+.z{
+  display: flex;
+  align-items: center
+}
+.comment_title{
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  margin-bottom: 30rpx
+}
+.comment_wrap{
+  box-sizing: border-box;
+  padding: 30rpx;
+  width: 100%;
+  margin-bottom: 120rpx
+}
+.comment_wrap_item{
+  width: 100%;
+  border-bottom: 1px solid #eeeeee;
+  margin-top: 20rpx
+}
+.top{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+.bottom{
+  font-size: 28rpx;
+  color: #999999;
+  margin-bottom: 10rpx
+}
+.avatar{
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20rpx
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  font-size: 28rpx
+}
+.left{
+  display: flex;
+  align-items: center
+}
+.right{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 26rpx;
+  color: #666666
+}
+.comment{
+  width: 100%;
+  height: 100rpx;
+  border-top: 1px solid #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  background: #fff
+}
+.inp{
+  width: 524rpx;
+  height: 65rpx;
+  background: #eeeeee;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+}
+.inp2{
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+.inp3{
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  margin-top: 18rpx
+}
+
+.button{
+  width: 145rpx;
+  height: 65rpx;
+  font-size: 28rpx;
+  color: #ff9900;
+  border: 1px solid #ff9900;
+  border-radius: 10rpx;
+  line-height: 65rpx;
+  text-align: center
+}

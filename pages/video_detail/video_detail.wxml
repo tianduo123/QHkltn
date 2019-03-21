@@ -1,0 +1,60 @@
+<!--pages/video_detail/video_detail.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+
+<video controls class='video' src='{{detail.video}}'></video>
+<!-- <view class='title'>{{detail.}}</view> -->
+<view class='title2'>上传时间：{{detail.update_time}}</view>
+<view class='line'></view>
+<view class='wxParse'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>
+<!-- 点赞区 -->
+<view class='btn'>
+  <view class='btn_item'>
+    <view class='z'>
+      <image src='../../icon/zuji.png' style='width:50rpx;height:50rpx'></image>
+      {{detail.browser}}人浏览
+    </view>
+  </view>
+  <view class='btn_item' style='border-right:1px solid #eeeeee;border-left:1px solid #eeeeee'>
+    <view class='z' bindtap='video_zan' data-id='{{detail.id}}'>
+      <image src='../../icon/zan.png' style='width:50rpx;height:50rpx'></image>
+      <view>{{detail.zan}}人点赞</view>
+    </view>
+  </view>
+  <view class='btn_item'>
+    <view class='z'>
+      <image src='../../icon/share.png' style='width:30rpx;height:30rpx'></image>
+      <view style='margin-left:10rpx'>
+        <button open-type='share'>分享</button>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='line'></view>
+<!-- 评论区 -->
+<view class='comment_title'>评论（{{commentList?comment:0}}）</view>
+<view class='comment_wrap'>
+  <view class='comment_wrap_item' wx:for='{{commentList}}' wx:key='{{index}}'>
+    <view class='top'>
+      <view class='left'>
+        <view class='avatar'>
+          <image src='{{item.headimgurl}}' style='width:100%;height:100%'></image>
+        </view>
+        <view class='info'>
+          <view style='font-weight:bold'>{{item.nickname}}</view>
+          <view style='color:#999999'>{{item.add_time}}</view>
+        </view>
+      </view>
+      <view class='right'>
+        <image src='../../icon/zan.png' style='width:50rpx;height:50rpx' data-id='{{item.id}}' bindtap='comment_zan'></image>
+        <view>({{item.zan}})</view>
+      </view>
+    </view>
+    <view class='bottom'>{{item.content}}</view>
+  </view>
+</view>
+<view class='comment'>
+  <input placeholder='我要评论' bindinput='getVal' value='{{val}}' style='font-size:28rpx'></input>
+  <view class='button' bindtap='comment'>评论</view>
+</view>

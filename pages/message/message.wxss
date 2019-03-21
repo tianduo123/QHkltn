@@ -1,0 +1,23 @@
+/* pages/message/message.wxss */
+.wrap{
+  width: 100%;
+  height: 400rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+.line{
+  width: 100%;
+  height: 10rpx;
+  background: #eeeeee
+}
+.btn{
+  width: 80%;
+  height: 80rpx;
+  margin: 150rpx auto;
+  background: #ff6633;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+  border-radius: 10rpx
+}

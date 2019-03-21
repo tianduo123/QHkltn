@@ -1,0 +1,90 @@
+/* pages/getgoods/getgoods.wxss */
+.item{
+  box-sizing: border-box;
+  padding: 30rpx;
+  width: 100%;
+  height: 200rpx;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.item2{
+  box-sizing: border-box;
+  padding: 30rpx;
+  width: 100%;
+  height: 200rpx;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #eeeeee
+}
+.isGet{
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 28rpx
+}
+.isGet2{
+  width: 20%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 28rpx
+}
+.info{
+  width: 80%
+}
+.btn{
+  width: 99rpx;
+  height: 43rpx;
+  border-radius: 50rpx;
+  background: #f0320e;
+  font-size: 24rpx;
+  line-height: 43rpx;
+  text-align: center;
+  color: #ffffff
+}
+.info{
+  display: flex
+}
+.left{
+  width: 260rpx;
+  height: 150rpx;
+  margin-right: 20rpx
+}
+.right{
+  width: 100%;
+  height: 155rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around
+}
+.record{
+  width: 100%;
+  height: 93rpx;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  font-size: 28rpx;
+  color: #f45010;
+  justify-content: space-around;
+  border-top: 1px solid #eeeeee
+}
+
+.empty{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column
+}
+.empty>image{
+  width: 280rpx;
+  height: 280rpx;
+}

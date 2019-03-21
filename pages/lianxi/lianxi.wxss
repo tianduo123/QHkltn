@@ -1,0 +1,72 @@
+/* pages/lianxi/lianxi.wxss */
+.top{
+  width: 100%;
+  height: 85rpx;
+  display: flex;
+  align-items: center
+}
+.map{
+  width: 690rpx;
+  height: 480rpx;
+  margin: 0 auto
+}
+.bottom{
+  width: 100%;
+  height: 170rpx;
+  display: flex;
+  align-items: center
+}
+.btn{
+  width: 480rpx;
+  height: 70rpx;
+  display: flex;
+  line-height: 70rpx;
+  margin: 0 auto;
+  border-radius: 20rpx;
+  overflow: hidden;
+  border: 1rpx solid #ff9600
+}
+.item1{
+  width: 50%;
+  height: 100%;
+  font-size: 28rpx;
+  text-align: center;
+  background: #ff9600;
+  color: #ffffff
+}
+.item{
+  width: 50%;
+  height: 100%;
+  font-size: 28rpx;
+  text-align: center;
+  color: #ff9600
+}
+.line{
+  width: 100%;
+  height: 20rpx;
+  background: #eeeeee
+}
+.share{
+  width: 100%;
+  height: 300rpx;
+  /* background: #eeeeee; */
+  box-sizing: border-box;
+  padding: 30rpx 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+.share_img{
+  width: 610rpx;
+  height: 220rpx;
+}
+.share_img2{
+  width: 800rpx;
+  height: 220rpx;
+}
+.wrap{
+  margin-left:30rpx;
+  font-size:32rpx;
+  display: flex;
+  flex-direction: column
+}

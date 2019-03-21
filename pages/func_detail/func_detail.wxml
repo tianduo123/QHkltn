@@ -1,0 +1,15 @@
+<!--pages/func_detail/func_detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='title'>
+  <view class='left'>
+    <view style='font-size:30rpx'>{{detail.title}}</view>
+    <view style='font-size:26rpx;color:#999999'>{{detail.update_time}}</view>
+  </view>
+  <view class='right' bindtap='like'>
+    <image src='{{ isZan? "../../icon/zan2.png" :"../../icon/zan.png"}}' style='width:40rpx;height:40rpx;margin-right:20rpx'></image>
+    <!-- <view style='font-size:26rpx;color:#999999'>{{detail.zan}}</view> -->
+  </view>
+</view>
+<view class='wxParse'>
+<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view> 

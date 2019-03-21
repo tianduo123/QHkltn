@@ -1,0 +1,100 @@
+<swiper class='banner' autoplay='true' indicator-dots='true'>
+  <swiper-item wx:for='{{bannerList}}' wx:key='{{index}}' bindtap='toGoodsDetail' data-id='{{item.id}}'>
+    <image src='{{imgurl+item.image}}' style='width:100%;height:100%'></image>
+  </swiper-item>
+</swiper>
+<view style='margin:27rpx 0 27rpx 27rpx;font-weight:bold;font-size:28rpx'>每日即时看</view>
+<view class='tab'>
+  <view class='tab-item' wx:for='{{tabList}}' wx:key='{{index}}' bindtap='toVideoDetail' data-id='{{item.id}}'>
+    <image src='{{imgurl+item.image}}' style='width:100rpx;height:100rpx'></image>
+    <view style='font-size:26rpx'>{{item.name}}</view>
+  </view>
+</view>
+<view class='line'></view>
+<view class='near'>
+    <view class='near_top'>
+      <view style='font-size:26rpx;font-weight:bold'>离您最近</view>
+      <view style='font-size:24rpx;color:#999999;margin-right:20rpx' bindtap='tonear'>更多>></view>
+    </view>
+    <scroll-view scroll-x style='white-space:nowrap;height:250rpx;'>
+      <view class='scroll_item' wx:for='{{near}}' wx:key>
+        <image src='{{imgurl+item.fengmian}}' style='width:211rpx;height:140rpx;margin-botton:15rpx'></image>
+        <view>{{item.school_name}}</view>
+      </view>
+    </scroll-view>
+</view>
+<view class='line'></view>
+<view style='margin:27rpx 0 27rpx 27rpx;font-weight:bold;font-size:28rpx'>身临其境</view>
+<view class='funwrap'>
+  <view class='fun-item' wx:for='{{functionalList}}' wx:key='{{inedx}}' data-src='{{item.video}}' data-id='{{item.id}}' bindtap='toFuncdetail'>
+    <view style='width:300rpx;height:141rpx'>
+    <image style='width:100%;height:100%' src='{{imgurl+item.image}}'></image>
+    </view>
+    <view class='content'>
+      <view style='font-size:28rpx;font-weight:bold'>{{item.name}}</view>
+      <view style='font-size:26rpx;margin:20rpx 0;color:#999999'>{{item.jianjie}}</view>
+      <view class='zuji'>
+        <image src='../../icon/zuji.png' style='width:50rpx;height:50rpx'></image>
+        <view style='font-size:26rpx;color:#999999'>{{item.browser}}</view>
+        <image src='../../icon/zan.png' style='width:50rpx;height:50rpx;margin-left:30rpx'></image>
+        <view style='font-size:26rpx;color:#999999'>{{item.zan}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='icon'>
+  <view class='icon_img'>
+    <image src='../../icon/icon.png' style='width:100%;height:100%'></image>
+  </view>
+  <view style='margin-top:15rpx'>—— 快乐童年提供技术支持 ——</view>
+  <!-- <view></view> -->
+</view>
+
+<button class='wrap' style='width:100%;height:{{Height*2}}rpx;opacity:0' open-type='getUserInfo' bindgetuserinfo='getUserInfo' hidden='{{isShow}}'>
+</button>
+
+<view class='Vwrap' style='width:100%;height:{{Height*2}}rpx;' wx:if='{{Vshow}}'>
+  <view style='width:100%;text-align:right'>
+    <image src='../../icon/close2.png' style='margin:20rpx;20rpx;0;0;width:40rpx;height:40rpx' bindtap='close'></image>
+  </view>
+  <video src='{{src}}' style='width:100%' bindplay='play'></video>
+ <view class='btn'>
+  <view class='btn_item'>
+    <view class='z'>
+      <image src='../../icon/zuji.png' style='width:50rpx;height:50rpx'></image>
+      {{browser}}人浏览
+    </view>
+  </view>
+  <view class='btn_item' style='border-right:1px solid #eeeeee;border-left:1px solid #eeeeee'>
+    <view class='z' bindtap='video_zan' data-id='{{item.id}}'>
+      <image src='../../icon/zan.png' style='width:50rpx;height:50rpx'></image>
+      <view>{{zan}}人点赞</view>
+    </view>
+  </view>
+  <view class='btn_item' data-id='{{item.id}}' bindtap='toDetail'>
+    <view class='z'>
+        <image src='../../icon/share.png' style='width:30rpx;height:30rpx'></image>
+      <view style='margin-left:10rpx'>
+        <button open-type='share'>分享</button>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='line'></view>
+<!-- 评论区 -->
+<view style='width:100%;height:300rpx;overflow:auto'>
+  <view style='margin-left:20rpx;font-size:30rpx;font-weight:bold'>评论</view>
+  <view class='Citem' wx:for='{{list}}' wx:key>
+    <view style='display:flex;align-items:center;margin-bottom:10rpx'>
+    <image src="{{item.headimgurl}}" style='width:40rpx;height:40rpx;border-radius:50%;margin-right:20rpx'></image>
+    <view style='font-size:28rpx;display:inline-block'>{{item.nickname}}</view>
+    </view>
+    <view style='margin-bottom:20rpx;font-size:28rpx;color:#999999'>{{item.content}}</view>
+  </view>
+  <view class='comment'>
+  <input placeholder='我要评论' bindinput='getVal' value='{{val}}' style='font-size:28rpx'></input>
+  <view class='button2' bindtap='comment'>评论</view>
+</view>
+</view>
+</view>

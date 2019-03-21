@@ -1,0 +1,148 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.5.2",
+	"appid": "wxb68b3a7f9149f0a3",
+	"projectname": "%E5%BF%AB%E4%B9%90%E7%AB%A5%E5%B9%B4",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 15,
+			"list": [
+				{
+					"id": -1,
+					"name": "预约",
+					"pathName": "pages/yuyue/yuyue",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "视频详情",
+					"pathName": "pages/video_detail/video_detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "联系",
+					"pathName": "pages/lianxi/lianxi",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "wode",
+					"pathName": "pages/me/me",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "register",
+					"pathName": "pages/register/register",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "附近商家",
+					"pathName": "pages/near/near",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "签到",
+					"pathName": "pages/qiandao/qiandao",
+					"query": "user_id=41",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "留言",
+					"pathName": "pages/message/message",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "积分兑换",
+					"pathName": "pages/getgoods/getgoods",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "积分记录",
+					"pathName": "pages/record/record",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "排行榜更多",
+					"pathName": "pages/more_rank/more_rank",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "修改密码",
+					"pathName": "pages/reset_psd/reset_psd",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "成长豆明细",
+					"pathName": "pages/scroe_detail/score_detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "333",
+					"pathName": "pages/video_detail/video_detail",
+					"query": "user_id=41",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "视频列表",
+					"pathName": "pages/everyday/everyday",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,7 @@
+<!--pages/message/message.wxml-->
+<view class='wrap'>
+  <textarea placeholder='说说您的建议，每日提建议一次奖励20成长豆，采纳奖励200成长豆，每条建议不超过200字' maxlength='200' bindinput='getVal' value='{{val}}'>
+  </textarea>
+</view>
+<view class='line'></view>
+<view class='btn' bindtap='submit'>提交建议</view>
