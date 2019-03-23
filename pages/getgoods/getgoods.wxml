@@ -1,5 +1,4 @@
 <!--pages/getgoods/getgoods.wxml-->
-<!-- <view style='margin-bottom:150rpx'> -->
 <view class='item' wx:for='{{goodsList}}' wx:key>
   <view class='info'>
     <view class='left'>

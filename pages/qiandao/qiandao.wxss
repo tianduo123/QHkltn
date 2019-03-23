@@ -6,8 +6,6 @@ page{
   padding: 1rpx
 }
 .bindPhone{
-  /* border: 1px solid #FFFF00; */
-  /* border-radius: 20rpx; */
   font-size: 28rpx;
   color: #FFFF00;
   text-align: right;
@@ -24,7 +22,6 @@ page{
 }
 .bottom{
   width: 700rpx;
-  /* height: 700rpx; */
   background: #ffffff;
   margin: 20rpx auto;
   border-radius: 20rpx;
@@ -131,7 +128,6 @@ page{
   background: #fd384e;
   color: #ffffff;
   font-size: 26rpx;
-  /* 去除button默认样式 */
   padding: 0
 }
 .rule{

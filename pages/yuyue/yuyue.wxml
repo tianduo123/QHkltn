@@ -21,10 +21,5 @@
       </input>
     </picker>
   </view>
-  <!-- <view class='item'>
-    <view style='font-size:26rpx'>推荐人（推荐人可获取成长豆奖励）</view>
-    <input class='input' name='tjr' placeholder='请输入推荐人姓名，若无则不填' placeholder-style='margin-left:40rpx;font-size:26rpx' value='{{name2}}'>
-    </input>
-  </view> -->
   <button form-type='submit' class='btn'>预约咨询</button>
 </form>

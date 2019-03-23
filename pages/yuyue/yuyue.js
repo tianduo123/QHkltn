@@ -1,5 +1,3 @@
-
-
 // pages/yuyue/yuyue.js
 let api = require('../../request/api.js')
 Page({

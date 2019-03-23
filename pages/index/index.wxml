@@ -12,23 +12,23 @@
 </view>
 <view class='line'></view>
 <view class='near'>
-    <view class='near_top'>
-      <view style='font-size:26rpx;font-weight:bold'>离您最近</view>
-      <view style='font-size:24rpx;color:#999999;margin-right:20rpx' bindtap='tonear'>更多>></view>
+  <view class='near_top'>
+    <view style='font-size:26rpx;font-weight:bold'>离您最近</view>
+    <view style='font-size:24rpx;color:#999999;margin-right:20rpx' bindtap='tonear'>更多>></view>
+  </view>
+  <scroll-view scroll-x style='white-space:nowrap;height:250rpx;'>
+    <view class='scroll_item' wx:for='{{near}}' wx:key>
+      <image src='{{imgurl+item.fengmian}}' style='width:211rpx;height:140rpx;margin-botton:15rpx'></image>
+      <view>{{item.school_name}}</view>
     </view>
-    <scroll-view scroll-x style='white-space:nowrap;height:250rpx;'>
-      <view class='scroll_item' wx:for='{{near}}' wx:key>
-        <image src='{{imgurl+item.fengmian}}' style='width:211rpx;height:140rpx;margin-botton:15rpx'></image>
-        <view>{{item.school_name}}</view>
-      </view>
-    </scroll-view>
+  </scroll-view>
 </view>
 <view class='line'></view>
 <view style='margin:27rpx 0 27rpx 27rpx;font-weight:bold;font-size:28rpx'>身临其境</view>
 <view class='funwrap'>
   <view class='fun-item' wx:for='{{functionalList}}' wx:key='{{inedx}}' data-src='{{item.video}}' data-id='{{item.id}}' bindtap='toFuncdetail'>
     <view style='width:300rpx;height:141rpx'>
-    <image style='width:100%;height:100%' src='{{imgurl+item.image}}'></image>
+      <image style='width:100%;height:100%' src='{{imgurl+item.image}}'></image>
     </view>
     <view class='content'>
       <view style='font-size:28rpx;font-weight:bold'>{{item.name}}</view>
@@ -51,50 +51,59 @@
   <!-- <view></view> -->
 </view>
 
-<button class='wrap' style='width:100%;height:{{Height*2}}rpx;opacity:0' open-type='getUserInfo' bindgetuserinfo='getUserInfo' hidden='{{isShow}}'>
-</button>
 
 <view class='Vwrap' style='width:100%;height:{{Height*2}}rpx;' wx:if='{{Vshow}}'>
   <view style='width:100%;text-align:right'>
     <image src='../../icon/close2.png' style='margin:20rpx;20rpx;0;0;width:40rpx;height:40rpx' bindtap='close'></image>
   </view>
   <video src='{{src}}' style='width:100%' bindplay='play'></video>
- <view class='btn'>
-  <view class='btn_item'>
-    <view class='z'>
-      <image src='../../icon/zuji.png' style='width:50rpx;height:50rpx'></image>
-      {{browser}}人浏览
+  <view class='btn'>
+    <view class='btn_item'>
+      <view class='z'>
+        <image src='../../icon/zuji.png' style='width:50rpx;height:50rpx'></image>
+        {{browser}}人浏览
+      </view>
     </view>
-  </view>
-  <view class='btn_item' style='border-right:1px solid #eeeeee;border-left:1px solid #eeeeee'>
-    <view class='z' bindtap='video_zan' data-id='{{item.id}}'>
-      <image src='../../icon/zan.png' style='width:50rpx;height:50rpx'></image>
-      <view>{{zan}}人点赞</view>
+    <view class='btn_item' style='border-right:1px solid #eeeeee;border-left:1px solid #eeeeee'>
+      <view class='z' bindtap='video_zan' data-id='{{item.id}}'>
+        <image src='../../icon/zan.png' style='width:50rpx;height:50rpx'></image>
+        <view>{{zan}}人点赞</view>
+      </view>
     </view>
-  </view>
-  <view class='btn_item' data-id='{{item.id}}' bindtap='toDetail'>
-    <view class='z'>
+    <view class='btn_item' data-id='{{item.id}}' bindtap='toDetail'>
+      <view class='z'>
         <image src='../../icon/share.png' style='width:30rpx;height:30rpx'></image>
-      <view style='margin-left:10rpx'>
-        <button open-type='share'>分享</button>
+        <view style='margin-left:10rpx'>
+          <button open-type='share'>分享</button>
+        </view>
       </view>
     </view>
   </view>
-</view>
-<view class='line'></view>
-<!-- 评论区 -->
-<view style='width:100%;height:300rpx;overflow:auto'>
-  <view style='margin-left:20rpx;font-size:30rpx;font-weight:bold'>评论</view>
-  <view class='Citem' wx:for='{{list}}' wx:key>
-    <view style='display:flex;align-items:center;margin-bottom:10rpx'>
-    <image src="{{item.headimgurl}}" style='width:40rpx;height:40rpx;border-radius:50%;margin-right:20rpx'></image>
-    <view style='font-size:28rpx;display:inline-block'>{{item.nickname}}</view>
+  <view class='line'></view>
+  <!-- 评论区 -->
+  <view style='width:100%;height:300rpx;overflow:auto'>
+    <view style='margin-left:20rpx;font-size:30rpx;font-weight:bold'>评论</view>
+    <view class='Citem' wx:for='{{list}}' wx:key>
+      <view style='display:flex;align-items:center;margin-bottom:10rpx'>
+        <image src="{{item.headimgurl}}" style='width:40rpx;height:40rpx;border-radius:50%;margin-right:20rpx'></image>
+        <view style='font-size:28rpx;display:inline-block'>{{item.nickname}}</view>
+      </view>
+      <view style='margin-bottom:20rpx;font-size:28rpx;color:#999999'>{{item.content}}</view>
     </view>
-    <view style='margin-bottom:20rpx;font-size:28rpx;color:#999999'>{{item.content}}</view>
+    <view class='comment'>
+      <input placeholder='我要评论' bindinput='getVal' value='{{val}}' style='font-size:28rpx'></input>
+      <view class='button2' bindtap='comment'>评论</view>
+    </view>
   </view>
-  <view class='comment'>
-  <input placeholder='我要评论' bindinput='getVal' value='{{val}}' style='font-size:28rpx'></input>
-  <view class='button2' bindtap='comment'>评论</view>
 </view>
-</view>
+<view class='getU' style='height:{{Height*2}}rpx' wx:if='{{isShow}}'>
+  <view class='getU_wrap'>
+    <view class='getU_t'>需要您的授权</view>
+    <view class='getU_c'>
+      <view>为了提供更好的服务</view>
+      <view>请在稍后的提示框中点击"允许"</view>
+    </view>
+    <image style='height:400rpx;width:500rpx' src='../../icon/get.png'></image>
+    <button class='getU_btn' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>我知道了</button>
+  </view>
 </view>

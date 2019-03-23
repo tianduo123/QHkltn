@@ -1,8 +1,4 @@
-<!--pages/qiandao/qiandao.wxml-->
-<!-- <view> -->
-
 <image src='../../icon/rule.png' class='rule' bindtap='rule'></image>
-<!-- <image src='../../icon/detail.png' class='rule2' ></image> -->
 <view class='userInfo'>
   <image src='{{userInfo.avatarUrl}}' class='avatar'>
   </image>

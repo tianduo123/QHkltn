@@ -25,7 +25,14 @@ Page({
       }
     })
   },
-
+  tonear(){
+    console.log('跳转小程序')
+    wx.showModal({
+      title: '提示',
+      content: '暂不支持跳转，请在微信内搜索该小程序',
+      showCancel:false
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

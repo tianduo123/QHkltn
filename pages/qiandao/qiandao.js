@@ -85,11 +85,6 @@ Page({
         }
       })
     }else{
-      //未绑定手机号，提示用户去绑定
-      // wx.showToast({
-      //   title: '请绑定手机号后再进行该操作',
-      //   icon: 'none'
-      // })
       wx.showModal({
         title: '需注册手机号才能进行该操作',
         content: '是否现在注册',
@@ -478,8 +473,6 @@ Page({
           userId:res.data,
           // show:false
         })
-
-
         //每次进入判断用户是否签到!!
         wx.request({
           url: api.isQiandao(app.globalData.openid, this.data.userId),
@@ -496,7 +489,6 @@ Page({
               this.setData({
                 isqiandao: true
               })
-
             }
           }
         })
@@ -532,8 +524,7 @@ Page({
               this.setData({
                 get3:true
               })
-            }
-            
+            }           
             if(res.data.share == 1){
                 console.log('今日已完成分享任务')
                 this.setData({

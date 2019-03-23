@@ -47,8 +47,8 @@ App({
   },
   globalData: {
     userInfo: null,
-    appid: 'wxb68b3a7f9149f0a3',
-    secret:'e54d5b9fe2ee33ace850a04c3ef16053',
+    appid: 'wx66314928577b3667',
+    secret:'8093c9853c7b04bf5aee0c377d4db304',
     openid:'', 
     userId:''
   }

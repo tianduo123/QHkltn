@@ -1,6 +1,6 @@
 <!--pages/near/near.wxml-->
 <view class='wrap'>
-  <view class='item' wx:for='{{nearList}}' wx:key bindtap=''>
+  <view class='item' wx:for='{{nearList}}' wx:key bindtap='tonear'>
     <view class='left'>
       <image src='{{imgUrl+item.image}}' style='width:100%;height:100%'></image>
     </view>

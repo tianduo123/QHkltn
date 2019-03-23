@@ -1,6 +1,6 @@
 /* pages/login/login.wxss */
 page{
-  background-image: url(http://192.168.8.101/children/Uploads/2019-01/1548639126-5c4e5b966a3cf.png);
+  background-image: url('https://syb.shimokeji.cn/Uploads/2019-03/1553240818-5c9492f207eae.png');
   background-size: 100% 100%;
   background-repeat: no-repeat
 }

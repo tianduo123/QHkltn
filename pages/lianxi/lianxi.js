@@ -1,12 +1,14 @@
 // pages/lianxi/lianxi.js
 let api = require('../../request/api.js')
+let app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isSele:true
+    isSele:true,
+    imgUrl: api.API_IMG
   },
 
   /**
@@ -22,6 +24,17 @@ Page({
           userInfo:res.data.re,
           latitude: res.data.re.jingweidu.split(',')[0],
           longitude: res.data.re.jingweidu.split(',')[1],
+
+        })
+      }
+    })
+    //获取喵喵老师二维码
+    wx.request({
+      url: api.getShare(),
+      success:(res)=>{
+        console.log(res)
+        this.setData({
+          shareUrl:res.data.re.miaomiao
         })
       }
     })
@@ -47,21 +60,6 @@ Page({
       name: this.data.userInfo.school_name,
       address: this.data.userInfo.address
     })
-
-
-    // wx.getLocation({
-    //   type:'gcj02',//返回可以用于wx.openLocation的经纬度  
-    //   success: function(res) {
-    //     console.log(res)
-    //     wx.openLocation({
-    //       latitude: 39.905425,
-    //       longitude: 116.641587,
-    //       name:'通州万达'
-    //     })
-    //   },
-    // })
-
-
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

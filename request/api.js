@@ -38,8 +38,6 @@ function addBrowser(a){
 function addBrowser2(a) {
   return API_BASE + `/index/eduBrowser?id=${a}`
 }
-
-
 //视频点赞
 function video_zan(a,b){
   return API_BASE + `/index/courseZan?admin_id=${BASE_ID}&openid=${a}&course_id=${b}`
@@ -205,10 +203,15 @@ function getZan(a){
 function getNscore(a,b){
   return API_BASE + `/user/newUserScore?user_id=${a}&num=${b}`
 }
+//获取喵喵老师二维码
+function getShare(){
+  return API_BASE + `/address/appMa`
+}
 module.exports = {
   API_IMG,
   getBanner,getTab,getFunctional,getImg,getBannerDetail,getAddress,getVideoList,getFuncdetail,getVideiDetail,like,
   getOpenid,getcode,yuyue,login,isLogin,saveUser,register,video_zan,comment,commentList,commentZan,rankList,allRankList,
   resetPsd,getRule,goodsList,getGoods,getUserScore,getLog,getUserLog,qiandao,isQiandao,submit,share,nearList,message,
-  isDone, getScore, isGet, tuijian, isMake, cancel, addBrowser, addBrowser2,comment2, commentList2, like2, getZan,getNscore
+  isDone, getScore, isGet, tuijian, isMake, cancel, addBrowser, addBrowser2,comment2, commentList2, like2, getZan,getNscore,
+  getShare
 }

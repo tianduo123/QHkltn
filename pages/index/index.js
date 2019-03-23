@@ -7,7 +7,7 @@ Page({
    */
   data: {
      imgurl:api.API_IMG,
-     isShow:false,
+    //  isShow:true,
      val:''
   },
 
@@ -15,6 +15,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //从缓存中拿用户userInfo数据
+    wx.getStorage({
+      key: 'userInfo',
+      success:(res)=>{
+        console.log('拿到授权信息')
+        //拿到用户微信信息 --> 不显示授权蒙层
+        this.setData({
+          isShow:false
+        })
+      },
+      fail:(res)=>{
+        console.log('没拿到授权信息')
+        //没拿到用户微信信息 --> 显示授权蒙层
+        this.setData({
+          isShow:true
+        })
+      }
+    })
     //获取用户经纬度（显示附近商家需要）
     wx.getLocation({
       success:(res)=>{
@@ -45,7 +63,6 @@ Page({
         app.globalData.Height = res.screenHeight
       },
     })
-
     //获取首页轮播
     wx.request({
       url: api.getBanner(),
@@ -135,7 +152,7 @@ Page({
         data: res.detail.userInfo,
       })
       this.setData({
-        isShow:true
+        isShow:false
       })
       //调用接口保存用户授权信息
       wx.request({

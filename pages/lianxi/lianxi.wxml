@@ -12,14 +12,14 @@
 </view>
 <view class='line'></view>
 <view class='share'>
-  <image src='../../image/share.png' class='share_img'></image>
+  <image src='{{imgUrl+userInfo.image}}' class='share_img'></image>
   <view class='wrap'>
     <view style='font-size:28rpx'>"幼儿园微信朋友圈"</view>
     <view style='font-size:28rpx'>扫描幼儿园微信朋友圈，你就可以看到整个学期非常连贯的活动，你对我们幼儿园你的了解会更全面</view>
   </view>
 </view>
 <view class='share' style='margin-bottom:80rpx'>
-  <image src='../../image/share.png' class='share_img2'></image>
+  <image src='{{imgUrl+shareUrl}}' class='share_img2'></image>
   <view class='wrap'>
     <view style='font-size:28rpx'>"喵喵老师"APP二维码</view>
     <view style='font-size:28rpx'>扫描整个二维码，你就可以看到我园再跟中国哪个幼教品牌合作  ，我园的教育理念及课程体系是什么，以及幼儿未来可能的变化</view>
